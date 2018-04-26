@@ -1,0 +1,93 @@
+@import "../variables";
+
+[data-layout="off-canvas-1"] {
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: $zindex-navbar-fixed + 1;
+    width: 100%;
+    padding-left: 0;
+    padding-right: $side-margin;
+    transform: translate3d(0, 0, 0);
+		transition: transform 0.35s ease;
+  }
+  &[data-collapsed="true"] {
+    .navbar {
+			transform: translate3d($left-sidebar-width, 0, 0);
+      width: 100%;
+    }
+  }
+  .main {
+    padding-top: $navbar-height + $side-margin;
+    padding-left: $side-margin;
+    padding-right: $side-margin;
+		width: 100%;
+    transform: translate3d(0, 0, 0);
+		transition: transform 0.35s ease;
+    .jumbotron {
+      width: 100%;
+      margin: ($side-margin / 2) 0;
+    }
+		.page {
+			> .row {
+				margin-bottom: $side-margin;
+				padding-bottom: 0;
+			}
+		}
+  }
+  &[data-collapsed="true"] {
+    .main {
+			transform: translate3d($left-sidebar-width, 0, 0);
+			width: 100%;
+    }
+  }
+  .left-sidebar-placeholder {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    height: calc(100%);
+    width: $left-sidebar-width;
+    z-index: $zindex-navbar-fixed + 6;
+    transform: translate3d(-$left-sidebar-width, 0, 0);
+		transition: transform 0.35s ease;
+  }
+  &[data-collapsed="true"] {
+    .left-sidebar-placeholder {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  .left-sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    height: calc(100%);
+    width: $left-sidebar-width;
+    z-index: $zindex-navbar-fixed + 7;
+    transform: translate3d(-$left-sidebar-width, 0, 0);
+		transition: transform 0.35s ease;
+		overflow: hidden;
+    .wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      height: calc(100%);
+      width: $left-sidebar-width + $side-margin;
+			overflow: auto;
+      .content {
+        height: calc(100%);
+        width: $left-sidebar-width;
+				margin-bottom: $navbar-height + $side-margin;
+      }
+    }
+  }
+  &[data-collapsed="true"] {
+    .left-sidebar {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+}

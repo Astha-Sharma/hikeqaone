@@ -1,0 +1,53 @@
+[data-collapsed="true"] .left-sidebar-2 {
+  width: 80px; }
+  [data-collapsed="true"] .left-sidebar-2 .section-title {
+    display: none; }
+  [data-collapsed="true"] .left-sidebar-2 .btn-sidebar-1 {
+    height: 70px;
+    justify-content: center;
+    flex-direction: column-reverse;
+    align-items: center;
+    flex-wrap: nowrap;
+    width: 80px; }
+    [data-collapsed="true"] .left-sidebar-2 .btn-sidebar-1.has-children:before {
+      display: none; }
+    [data-collapsed="true"] .left-sidebar-2 .btn-sidebar-1 .separator {
+      display: none; }
+    [data-collapsed="true"] .left-sidebar-2 .btn-sidebar-1 i {
+      width: 80px;
+      height: 35px;
+      margin: 0; }
+    [data-collapsed="true"] .left-sidebar-2 .btn-sidebar-1 .title {
+      width: 80px;
+      font-size: 10px;
+      height: 35px;
+      margin: 7px 0 0 0; }
+  [data-collapsed="true"] .left-sidebar-2 .section .collapse,
+  [data-collapsed="true"] .left-sidebar-2 .section .collapse.show,
+  [data-collapsed="true"] .left-sidebar-2 .section .collapsing {
+    transition: none !important; }
+  [data-collapsed="true"] .left-sidebar-2 .section ul > li {
+    position: relative; }
+    [data-collapsed="true"] .left-sidebar-2 .section ul > li > ul {
+      position: absolute;
+      top: 0;
+      left: 100%;
+      z-index: 1033;
+      width: 260px;
+      pointer-events: none;
+      opacity: 0; }
+      [data-collapsed="true"] .left-sidebar-2 .section ul > li > ul > li i {
+        visibility: hidden;
+        display: none; }
+    [data-collapsed="true"] .left-sidebar-2 .section ul > li:hover > ul {
+      box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+      pointer-events: auto;
+      opacity: 1;
+      width: 400px;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: flex-start; }
+      [data-collapsed="true"] .left-sidebar-2 .section ul > li:hover > ul > li {
+        width: 200px;
+        flex: 0 0 200px; }

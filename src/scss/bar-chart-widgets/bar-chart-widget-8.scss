@@ -1,0 +1,12 @@
+@import '../variables';
+@import '../palettes/widget';
+
+@each $key, $value in $widget-palettes {
+  [data-background="#{$key}"] {
+    .bar-chart-widget-8 {
+      background-color: map-get($value, "background-color");
+			border: map-get($value, "border");
+    }
+  }
+}
+

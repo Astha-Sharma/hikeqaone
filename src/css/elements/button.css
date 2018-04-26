@@ -1,0 +1,19 @@
+.myButtonContainer {
+  min-width: 70px;
+}
+
+.smart-form .myButtonContainer {
+  min-width: 70px;
+}
+
+.my-form .formHorizontal>.myButtonContainer {
+  min-width: 70px;
+  vertical-align: top;
+  margin: 34px 10px 0 0;
+}
+
+.my-form .myFormVertical>.myButtonContainer {
+  min-width: 70px;
+  vertical-align: top;
+  margin: 10px 10px 0 0;
+}

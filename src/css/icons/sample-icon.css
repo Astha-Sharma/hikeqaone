@@ -1,0 +1,36 @@
+.sample-icon {
+  text-align: center;
+  width: 150px;
+  min-height: 100px;
+  padding: 20px 0;
+  margin-bottom: 20px; }
+  .sample-icon .icon {
+    display: block; }
+  .sample-icon .icon-class {
+    display: block;
+    font-size: 0.8125rem;
+    font-family: "Lato", sans-serif; }
+
+[data-background="light"] .sample-icon .icon {
+  color: #212121; }
+  [data-background="light"] .sample-icon .icon i {
+    color: #212121; }
+
+[data-background="light"] .sample-icon .icon-class {
+  color: #212121; }
+
+[data-background="dark"] .sample-icon .icon {
+  color: #f5f5f5; }
+  [data-background="dark"] .sample-icon .icon i {
+    color: #f5f5f5; }
+
+[data-background="dark"] .sample-icon .icon-class {
+  color: #f5f5f5; }
+
+[data-background="primary"] .sample-icon .icon {
+  color: #f5f5f5; }
+  [data-background="primary"] .sample-icon .icon i {
+    color: #f5f5f5; }
+
+[data-background="primary"] .sample-icon .icon-class {
+  color: #f5f5f5; }

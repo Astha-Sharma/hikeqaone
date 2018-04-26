@@ -1,0 +1,29 @@
+.reactable-pagination {
+	td {
+		a {
+			padding: 0 10px;
+		}
+	}
+}
+
+.reactable-header-sortable {
+	outline: none !important;
+//	.reactable-header-sort-asc {
+//		position: relative;
+//		&:before {
+//			font-family: 'simple-line-icons';
+//			content: "\e069";
+//			display: block;
+//			position: absolute;
+//			top: 0;
+//			right: 0;
+//		}
+//	}
+//	.reactable-header-sort-desc {
+//		position: relative;
+//		&:before {
+//			font-family: 'simple-line-icons';
+//			content: "\e069";
+//		}
+//	}
+}

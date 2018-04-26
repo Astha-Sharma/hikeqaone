@@ -1,0 +1,33 @@
+@import "../variables";
+@import "../palettes/widget";
+@import "../mixins";
+.widget {
+  width: 100%;
+  padding: $side-margin;
+  margin-bottom: $margin-bottom;
+  > .row {
+    margin-bottom: $margin-bottom;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  .title {
+    margin-bottom: $margin-bottom / 4;
+		@include font-size(16px);
+    font-weight: 600;
+  }
+  .description {
+    margin-bottom: 0;
+		@include font-size(14px);
+    font-weight: 400;
+  }
+}
+@each $key, $value in $widget-palettes {
+  [data-background="#{$key}"] {
+    .widget {
+      background-color: map-get($value, "background-color");
+      color: map-get($value, "color");
+			border: map-get($value, "border");
+    }
+  }
+}

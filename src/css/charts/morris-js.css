@@ -1,0 +1,54 @@
+.morris-chart {
+  width: 100%;
+  height: 240px; }
+
+[data-background="light"] .morris-hover.morris-default-style {
+  color: #212121;
+  background: #ffffff;
+  border: solid 2px #e1e1e1; }
+
+[data-background="light"] #morris-donut-example svg text {
+  fill: #212121;
+  font-family: "Lato", sans-serif;
+  font-size: 8px;
+  font-weight: 300; }
+
+[data-background="light"] #morris-donut-example svg path {
+  stroke: #ffffff; }
+
+[data-background="light"] #morris-line-example circle {
+  stroke: #e1e1e1; }
+
+[data-background="dark"] .morris-hover.morris-default-style {
+  color: #f5f5f5;
+  background: #212121;
+  border: solid 2px #353535; }
+
+[data-background="dark"] #morris-donut-example svg text {
+  fill: #f5f5f5;
+  font-family: "Lato", sans-serif;
+  font-size: 8px;
+  font-weight: 300; }
+
+[data-background="dark"] #morris-donut-example svg path {
+  stroke: #212121; }
+
+[data-background="dark"] #morris-line-example circle {
+  stroke: #353535; }
+
+[data-background="primary"] .morris-hover.morris-default-style {
+  color: #f5f5f5;
+  background: #1a237e;
+  border: solid 2px #212ca0; }
+
+[data-background="primary"] #morris-donut-example svg text {
+  fill: #f5f5f5;
+  font-family: "Lato", sans-serif;
+  font-size: 8px;
+  font-weight: 300; }
+
+[data-background="primary"] #morris-donut-example svg path {
+  stroke: #1a237e; }
+
+[data-background="primary"] #morris-line-example circle {
+  stroke: #212ca0; }

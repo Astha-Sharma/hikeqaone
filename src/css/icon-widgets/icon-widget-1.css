@@ -1,0 +1,12 @@
+.icon-widget-1 {
+  text-align: center;
+  font-size: 0.9375rem;
+  height: 60px; }
+  .icon-widget-1 .row {
+    height: 60px; }
+    .icon-widget-1 .row > .col:first-child {
+      text-align: right; }
+    .icon-widget-1 .row > .col:last-child {
+      text-align: left; }
+  .icon-widget-1 i {
+    font-size: 1.0625rem; }

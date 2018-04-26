@@ -1,0 +1,143 @@
+.dropdown-user .btn.btn-default {
+  position: relative;
+  margin-right: 10px; }
+  .dropdown-user .btn.btn-default img {
+    max-width: 40px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #fff;
+    box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+    position: absolute;
+    top: 50%;
+    left: 0;
+    margin-top: -15px;
+    margin-left: -20px;
+    z-index: 1; }
+  .dropdown-user .btn.btn-default .badge {
+    transform: scale(0.85);
+    border: 0;
+    box-shadow: none !important;
+    position: absolute;
+    top: -10px;
+    right: 10px;
+    z-index: 2; }
+
+.dropdown-user .dropdown-item {
+  width: 200px;
+  display: flex;
+  height: 40px;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  font-size: 0.85rem; }
+  .dropdown-user .dropdown-item i {
+    font-size: 1rem;
+    width: 24px;
+    margin-right: 10px; }
+  .dropdown-user .dropdown-item .title {
+    flex: 1; }
+
+[data-navbar="light"] .dropdown-user {
+  background: #ffffff;
+  color: #212121; }
+  [data-navbar="light"] .dropdown-user .dropdown-title {
+    background: #d6d6d6;
+    color: #212121; }
+  [data-navbar="light"] .dropdown-user .dropdown-item {
+    background: #ffffff;
+    color: #212121; }
+    [data-navbar="light"] .dropdown-user .dropdown-item:hover {
+      background: #ffffff;
+      color: #212121; }
+
+[data-navbar="dark"] .dropdown-user {
+  background: #212121;
+  color: #f5f5f5; }
+  [data-navbar="dark"] .dropdown-user .dropdown-title {
+    background: #404040;
+    color: #f5f5f5; }
+  [data-navbar="dark"] .dropdown-user .dropdown-item {
+    background: #212121;
+    color: #f5f5f5; }
+    [data-navbar="dark"] .dropdown-user .dropdown-item:hover {
+      background: #212121;
+      color: #f5f5f5; }
+
+[data-navbar="primary"] .dropdown-user {
+  background: #303f9f;
+  color: #f5f5f5; }
+  [data-navbar="primary"] .dropdown-user .dropdown-title {
+    background: #4557c7;
+    color: #f5f5f5; }
+  [data-navbar="primary"] .dropdown-user .dropdown-item {
+    background: #303f9f;
+    color: #f5f5f5; }
+    [data-navbar="primary"] .dropdown-user .dropdown-item:hover {
+      background: #303f9f;
+      color: #f5f5f5; }
+
+[data-navbar="secondary"] .dropdown-user {
+  background: #005180;
+  color: #f5f5f5; }
+  [data-navbar="secondary"] .dropdown-user .dropdown-title {
+    background: #0078bd;
+    color: #f5f5f5; }
+  [data-navbar="secondary"] .dropdown-user .dropdown-item {
+    background: #005180;
+    color: #f5f5f5; }
+    [data-navbar="secondary"] .dropdown-user .dropdown-item:hover {
+      background: #005180;
+      color: #f5f5f5; }
+
+[data-navbar="info"] .dropdown-user {
+  background: #1976d2;
+  color: #f5f5f5; }
+  [data-navbar="info"] .dropdown-user .dropdown-title {
+    background: #4095e8;
+    color: #f5f5f5; }
+  [data-navbar="info"] .dropdown-user .dropdown-item {
+    background: #1976d2;
+    color: #f5f5f5; }
+    [data-navbar="info"] .dropdown-user .dropdown-item:hover {
+      background: #1976d2;
+      color: #f5f5f5; }
+
+[data-navbar="success"] .dropdown-user {
+  background: #388e3c;
+  color: #f5f5f5; }
+  [data-navbar="success"] .dropdown-user .dropdown-title {
+    background: #4bb850;
+    color: #f5f5f5; }
+  [data-navbar="success"] .dropdown-user .dropdown-item {
+    background: #388e3c;
+    color: #f5f5f5; }
+    [data-navbar="success"] .dropdown-user .dropdown-item:hover {
+      background: #388e3c;
+      color: #f5f5f5; }
+
+[data-navbar="warning"] .dropdown-user {
+  background: #ffa000;
+  color: #f5f5f5; }
+  [data-navbar="warning"] .dropdown-user .dropdown-title {
+    background: #ffb73d;
+    color: #f5f5f5; }
+  [data-navbar="warning"] .dropdown-user .dropdown-item {
+    background: #ffa000;
+    color: #f5f5f5; }
+    [data-navbar="warning"] .dropdown-user .dropdown-item:hover {
+      background: #ffa000;
+      color: #f5f5f5; }
+
+[data-navbar="danger"] .dropdown-user {
+  background: #d32f2f;
+  color: #f5f5f5; }
+  [data-navbar="danger"] .dropdown-user .dropdown-title {
+    background: #de6262;
+    color: #f5f5f5; }
+  [data-navbar="danger"] .dropdown-user .dropdown-item {
+    background: #d32f2f;
+    color: #f5f5f5; }
+    [data-navbar="danger"] .dropdown-user .dropdown-item:hover {
+      background: #d32f2f;
+      color: #f5f5f5; }

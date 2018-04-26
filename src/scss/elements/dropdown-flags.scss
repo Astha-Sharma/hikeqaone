@@ -1,0 +1,40 @@
+@import "../variables";
+@import "../palettes/navbar";
+.dropdown-flags {
+	.dropdown-menu {
+		width: 400px;
+		.dropdown-inner {
+			display: flex;
+			justify-content: flex-start;
+			align-items: center;
+			flex-direction: row;
+			flex-wrap: wrap;
+			.dropdown-item {
+				width: 50%;
+				.flag {
+					margin-right: 10px;
+				}
+			}
+		}
+	}
+}
+@each $key, $value in $navbar-palettes {
+  [data-navbar="#{$key}"] {
+    .dropdown-flags {
+      background: map-get($value, "background-color");
+      color: map-get($value, "color");
+      .dropdown-title {
+        background: map-get($value, "border-color");
+        color: map-get($value, "color");
+      }
+      .dropdown-item {
+        background: map-get($value, "background-color");
+        color: map-get($value, "color");
+				&:hover {
+					background: map-get($value, "background-color");
+					color: map-get($value, "color");
+				}
+      }
+    }
+  }
+}	

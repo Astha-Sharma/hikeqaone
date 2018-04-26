@@ -1,0 +1,31 @@
+
+.summary-report .box {
+    background: #fff;
+    border-radius: 3px;
+    border: 1px solid rgba(200,216,226,.5);
+    display: block;
+    padding: 15px;
+    position: relative;
+}
+
+.box .box-kpi {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #4b4b63;
+    font-size: 1.1em;
+    margin-top: 10px;
+}
+.summary-report .top-stats {
+    padding: 0 10px;
+}
+
+.row {
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+*, :after, :before {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}

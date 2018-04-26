@@ -1,0 +1,13 @@
+.icon-widget-5 {
+  font-size: 0.9375rem;
+  height: 70px;
+  padding: 0 10px; }
+  .icon-widget-5 .row {
+    height: 70px; }
+    .icon-widget-5 .row > .col > .row {
+      height: 35px; }
+  .icon-widget-5 .number,
+  .icon-widget-5 .text {
+    white-space: nowrap; }
+  .icon-widget-5 i {
+    font-size: 1.25rem; }

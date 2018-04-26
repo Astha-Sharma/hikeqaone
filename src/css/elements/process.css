@@ -1,0 +1,94 @@
+ol.timeline {
+    position: relative;
+    display: block;
+    margin: 50px 0px 30px 0px;
+    height: 4px;
+    background: #dee0e8;
+    /* ---- Details ---- */
+    /* ---- Hover effects ---- */
+}
+ol.timeline li {
+    position: relative;
+    top: -35px;
+    display: inline-block;
+    float: left;
+    width: 150px;
+    transform: rotate(0deg);
+    font: 11px arial;
+    color: #908E8E;
+}
+ol.timeline li::before {
+    content: "";
+    position: absolute;
+    top: 26px;
+    left: 27px;
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    background: #c6c6c6;
+}
+ol.timeline .details {
+    display: none;
+    position: absolute;
+    left: 16px;
+    top: 50px;
+    padding: 5px;
+    border-radius: 3px;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+    font: 9px arial;
+    background: #fff;
+}
+ol.timeline .label-ticked {
+    content: "";
+    position: absolute;
+    top: 26px;
+    left: 27px;
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    color: #fff;
+    text-align: center;
+    padding-top: 2px;
+}
+ol.timeline .details::before {
+    content: "";
+    position: absolute;
+    left: 10px;
+    top: -9px;
+    display: block;
+    width: 0;
+    height: 0;
+    border: 10px solid rgba(0, 0, 0, 0.03);
+    border-bottom-color: #fff;
+    border-top: 0;
+}
+ol.timeline li:hover {
+    cursor: pointer;
+    color: #28e;
+}
+ol.timeline li:hover .details {
+    display: block;
+    color: #444;
+}
+ol.timeline::before,
+ol.timeline::after {
+    content: "";
+    position: absolute;
+    top: -8px;
+    display: block;
+    width: 0;
+    height: 0;
+}
+ol.timeline::before {
+    left: -5px;
+}
+ol.timeline::after {
+    right: -10px;
+    border: 10px solid transparent;
+    border-right: 0;
+    border-left: 20px solid #dee0e8;
+    border-radius: 3px;
+}

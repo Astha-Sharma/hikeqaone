@@ -1,0 +1,27 @@
+@import "../variables";
+@import "../palettes/background";
+@import "../mixins";
+
+.jumbotron {
+  &.jumbotron-1 {
+		padding: $side-margin;
+    h4 {
+      @include font-size(22px);
+			font-weight: 600;
+    }
+    h5 {
+      @include font-size(16px);
+			margin-bottom: 10px;
+    }
+  }
+}
+@each $key, $value in $background-palettes {
+  [data-background="#{$key}"] {
+    .jumbotron {
+      &.jumbotron-1 {
+        background-color: map-get($value, "background-color");
+        color: map-get($value, "color");
+      }
+    }
+  }
+}

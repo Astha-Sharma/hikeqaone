@@ -1,0 +1,20 @@
+[
+  {
+    "id": "1",
+    "SuiteName": "test1",
+    "Progress": "In-progress",
+    "Team": "Stage1",
+    "Core": 12,
+    "Enabled": 1,
+    "Type": 2
+  },
+  {
+    "id": "1",
+    "SuiteName": "test1",
+    "Progress": "In-progress",
+    "Team": "Stage1",
+    "Core": 12,
+    "Enabled": 1,
+    "Type": 2
+  }
+]

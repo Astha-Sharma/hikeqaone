@@ -1,0 +1,94 @@
+
+
+.runningDetails{
+    background-color: #005180;
+    border-radius: 3px;
+    border: 4px solid rgba(200, 216, 226, .5);
+    margin-top: 15px;
+    padding: 5px;
+}
+
+.staticText{
+    color:white;
+    font-weight: bold;
+}
+
+
+.pageTitle{
+    color:#690038;
+}
+
+
+.drogonbox {
+    background: #ffffff;
+    border-radius: 10px;
+    border: 1px solid rgba(200, 216, 226, .5);
+    display: block;
+    padding: 10px;
+    position: relative;
+}
+
+.drogonbox[role=button] {
+    cursor: auto;
+}
+
+.drogonbox.users {
+    border-left: 2px solid #1e90ff;
+    color: #1e90ff;
+}
+
+.drogonbox.hits {
+    border-left: 2px solid #f58e15;
+    color: #32cd32;
+}
+.drogonbox.avg-response-time, .drogonbox.response-time {
+    border-left: 2px solid orange;
+    color: orange;
+}
+z
+.drogonbox.errors {
+    border-left: 2px solid #dc143c;
+    color: #dc143c;
+    cursor: pointer;
+}
+
+.errors {
+    border-left: 2px solid #dc143c;
+    color: #dc143c;
+    cursor: pointer;
+}
+
+.drogonbox.bytes {
+    border-left: 2px solid #8a2be2;
+    color: #8a2be2;
+}
+
+.drogonbox-stats {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    display: block;
+    margin: 0;
+    max-width: 100%}
+
+.drogonbox-count {
+    line-height: 1em;
+    font-size: 2.0em;
+}
+
+.drogonbox-kpi {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #4b4b63;
+    font-size: 1.0em;
+    margin-top: 10px;
+}
+
+.box-units {
+    color: #1e90ff;
+    font-size: 1.0em;
+    margin-left: 5px;
+}

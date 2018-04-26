@@ -1,0 +1,128 @@
+@import "../variables";
+@import "../mixins";
+@import "../palettes/navbar";
+.navbar {
+  &.navbar-1 {
+		min-height: 0;
+    height: $navbar-height;
+    .logo {
+			width: $left-sidebar-width;
+    }
+    .nav {
+      .nav-item {
+        .nav-link {
+          padding-left: $side-margin;
+          padding-right: $side-margin;
+        }
+      }
+    }
+    .nav {
+			[data-toggle="dropdown"] {
+				padding-left: $side-margin;
+				padding-right: $side-margin;
+			}
+    }
+    .dropdown {
+      &.show {
+        .dropdown-menu {
+          margin-top: 0;
+          top: 46px;
+        }
+      }
+    }
+    .navbar-search-form {
+      flex: 0 0 240px;
+      margin-left: 10px;
+      margin-right: $side-margin;
+			.form-group {
+				margin: 0 0 3px 0;
+				.input-group {
+					margin: 0;
+				}
+			}
+    }
+  }
+}
+@each $key, $value in $navbar-palettes {
+  [data-navbar="#{$key}"] {
+    .navbar {
+      &.navbar-1 {
+        background: map-get($value, "background-color");
+        color: map-get($value, "color");
+				@if $key == 'light' {
+					border-bottom: 1px solid map-get($value, "border-color");
+				}
+        .nav-link {
+          color: map-get($value, "color");
+        }
+        .dropdown {
+          .dropdown-item {
+            a {
+              color: map-get($value, "color") !important;
+            }
+          }
+        }
+        .input-group {
+          .input-group-addon {
+            color: map-get($value, "color");
+            background-color: map-get($value, "even-color");
+            border-color: map-get($value, "even-color");
+          }
+          .form-control {
+            color: map-get($value, "color");
+            background-color: map-get($value, "even-color");
+            border-color: map-get($value, "even-color");
+          }
+        }
+      }
+    }
+  }
+}
+
+@each $key, $value in $navbar-palettes {
+  [data-navbar="#{$key}"] {
+		.navbar-search {
+			.form-control {
+				@include placeholder {
+					color: map-get($value, "color");
+				};
+			}
+		}
+    .dropdown-grid, 
+		.dropdown-tasks, 
+		.dropdown-flags, 
+		.dropdown-messages, 
+		.dropdown-user {
+			.btn.btn-default {
+				border: none;
+				background: map-get($value, "background-color");
+				color: map-get($value, "color");
+				&:hover,
+				&:active,
+				&:focus,
+				&:visited,
+				&.focus {
+					border: none;
+					background: map-get($value, "background-color");
+					color: map-get($value, "color");
+				}
+			}
+			.dropdown-menu {
+				background: map-get($value, "background-color");
+				color: map-get($value, "color");
+				.dropdown-title {
+					background: map-get($value, "border-color");
+					color: map-get($value, "color");
+				}
+				.dropdown-item {
+					background: map-get($value, "background-color");
+					color: map-get($value, "color");
+					&:hover {
+						background: map-get($value, "odd-color");
+						color: map-get($value, "color");
+					}
+				}
+			}
+		}
+  }
+}

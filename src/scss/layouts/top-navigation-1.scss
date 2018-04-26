@@ -1,0 +1,42 @@
+@import "../variables";
+
+[data-layout="top-navigation-1"] {
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: $zindex-navbar-fixed + 1;
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+    transform: translate3d(0, 0, 0);
+		.logo {
+			width: $logo-width + 10px !important;
+		}
+		.toggle-layout {
+			display: none !important;
+		}
+  }
+  .top-navigation {
+    position: fixed;
+		top: $navbar-height;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: $zindex-navbar-fixed;
+    padding-left: 0;
+    padding-right: 0;
+    transform: translate3d(0, 0, 0);
+  }
+  .main {
+    padding-top: $navbar-height + $top-navigation-height + $side-margin;
+    padding-left: $side-margin;
+    padding-right: $side-margin;
+    transform: translate3d(0, 0, 0);
+    .jumbotron {
+      width: 100%;
+      margin: ($side-margin / 2) 0;
+    }
+  }
+}

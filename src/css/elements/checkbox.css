@@ -1,0 +1,11 @@
+.my-form .myFormHorizontal>.myCheckBoxContainer {
+  margin: 42px 5px 0;
+}
+
+.my-form .myFormVertical>.myCheckBoxContainer {
+  margin: 10px 0 0;
+}
+
+.myCheckBoxContainer {
+  margin: 4px 600px 0;
+}

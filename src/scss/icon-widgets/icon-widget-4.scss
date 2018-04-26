@@ -1,0 +1,13 @@
+@import '../variables';
+@import '../mixins';
+.icon-widget-4 {
+	text-align: center;
+	padding: 20px 0;
+	.text {
+		@include font-size(16px);
+	}
+	i {
+		@include font-size(18px);
+		margin-bottom: 10px;
+	}
+}

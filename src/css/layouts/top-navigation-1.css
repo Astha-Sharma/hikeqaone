@@ -1,0 +1,34 @@
+[data-layout="top-navigation-1"] .navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1031;
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+  transform: translate3d(0, 0, 0); }
+  [data-layout="top-navigation-1"] .navbar .logo {
+    width: 120px !important; }
+  [data-layout="top-navigation-1"] .navbar .toggle-layout {
+    display: none !important; }
+
+[data-layout="top-navigation-1"] .top-navigation {
+  position: fixed;
+  top: 60px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1030;
+  padding-left: 0;
+  padding-right: 0;
+  transform: translate3d(0, 0, 0); }
+
+[data-layout="top-navigation-1"] .main {
+  padding-top: 125px;
+  padding-left: 20px;
+  padding-right: 20px;
+  transform: translate3d(0, 0, 0); }
+  [data-layout="top-navigation-1"] .main .jumbotron {
+    width: 100%;
+    margin: 10px 0; }

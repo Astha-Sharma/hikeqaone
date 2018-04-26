@@ -1,0 +1,124 @@
+@import "../variables";
+@import "../mixins";
+@import "../palettes/top-navigation";
+
+.top-navigation {
+  &.top-navigation-1 {
+    height: $top-navigation-height;
+		[data-toggle="dropdown"] {
+			position: relative;
+			&:after {
+				content: "";
+				display: none;
+				position: absolute;
+				bottom: 0;
+				left: 0px;
+				width: 100%;
+				height: 3px;
+			}
+			&:hover {
+				&:after {
+					display: block;
+				}
+			}
+		}
+		.dropdown.show {
+			[data-toggle="dropdown"].active {
+				&:after {
+					display: block;
+				}
+			}
+		}
+    .nav {
+			[data-toggle="dropdown"] {
+				height: $top-navigation-height;
+				padding-left: $side-margin;
+				padding-right: $side-margin;
+				text-transform: capitalize;
+				font-weight: normal;
+				@include font-size(14px);
+			}
+			.dropdown-item {
+				text-transform: capitalize;
+				font-weight: normal;
+				@include font-size(14px);
+			}
+    }
+  }
+}
+
+@each $key, $value in $top-navigation-palettes {
+  [data-top-navigation="#{$key}"] {
+    .top-navigation {
+      &.top-navigation-1 {
+        background: map-get($value, "background-color");
+        color: map-get($value, "color");
+				@if $key == 'light' {
+					border-bottom: 1px solid map-get($value, "border-color");
+				}
+				.btn.btn-default {
+					border: none;
+					background: map-get($value, "background-color");
+					color: map-get($value, "color");
+					//border-bottom: 1px solid map-get($value, "border-color");
+				}
+				[data-toggle="dropdown"] {
+					&:after {
+						background: map-get($value, "highlight-color");
+					}
+				}
+        .dropdown {
+					background: map-get($value, "background-color");
+					color: map-get($value, "color");
+					.dropdown-menu {
+						background: map-get($value, "background-color");
+						color: map-get($value, "color");
+						.dropdown-item {
+							background: map-get($value, "background-color");
+							color: map-get($value, "color");
+							a {
+								color: map-get($value, "color");
+							}
+							&:hover {
+								background: map-get($value, "odd-color");
+								color: map-get($value, "color");
+							}
+						}
+					}
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+	.top-navigation-1 {
+		.dropdown:nth-child(n + 4) {
+			display: none;
+		}
+	}
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+	.top-navigation-1 {
+		.dropdown:nth-child(n + 6) {
+			display: none;
+		}
+	}
+} 
+
+@media (min-width: 769px) and (max-width: 992px) {
+	.top-navigation-1 {
+		.dropdown:nth-child(n + 8) {
+			display: none;
+		}
+	}
+} 
+
+@media (min-width: 993px) and (max-width: 1200px) {
+	.top-navigation-1 {
+		.dropdown:nth-child(n + 10) {
+			display: none;
+		}
+	}
+} 

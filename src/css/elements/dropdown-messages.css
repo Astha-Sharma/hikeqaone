@@ -1,0 +1,133 @@
+.dropdown-messages .btn.btn-default {
+  position: relative; }
+  .dropdown-messages .btn.btn-default .badge {
+    transform: scale(0.85);
+    border: 0;
+    box-shadow: none !important;
+    position: absolute;
+    top: 0;
+    right: 0; }
+
+.dropdown-messages .dropdown-menu {
+  width: 400px; }
+  .dropdown-messages .dropdown-menu .dropdown-inner {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap; }
+    .dropdown-messages .dropdown-menu .dropdown-inner .dropdown-item {
+      flex-direction: column; }
+      .dropdown-messages .dropdown-menu .dropdown-inner .dropdown-item p {
+        margin-bottom: 5px; }
+        .dropdown-messages .dropdown-menu .dropdown-inner .dropdown-item p:last-child {
+          margin-bottom: 0; }
+      .dropdown-messages .dropdown-menu .dropdown-inner .dropdown-item .badge {
+        margin-right: 10px; }
+      .dropdown-messages .dropdown-menu .dropdown-inner .dropdown-item .date {
+        font-size: 0.8rem;
+        font-weight: 600; }
+
+[data-navbar="light"] .dropdown-messages {
+  background: #ffffff;
+  color: #212121; }
+  [data-navbar="light"] .dropdown-messages .dropdown-title {
+    background: #d6d6d6;
+    color: #212121; }
+  [data-navbar="light"] .dropdown-messages .dropdown-item {
+    background: #ffffff;
+    color: #212121; }
+    [data-navbar="light"] .dropdown-messages .dropdown-item:hover {
+      background: #ffffff;
+      color: #212121; }
+
+[data-navbar="dark"] .dropdown-messages {
+  background: #212121;
+  color: #f5f5f5; }
+  [data-navbar="dark"] .dropdown-messages .dropdown-title {
+    background: #404040;
+    color: #f5f5f5; }
+  [data-navbar="dark"] .dropdown-messages .dropdown-item {
+    background: #212121;
+    color: #f5f5f5; }
+    [data-navbar="dark"] .dropdown-messages .dropdown-item:hover {
+      background: #212121;
+      color: #f5f5f5; }
+
+[data-navbar="primary"] .dropdown-messages {
+  background: #303f9f;
+  color: #f5f5f5; }
+  [data-navbar="primary"] .dropdown-messages .dropdown-title {
+    background: #4557c7;
+    color: #f5f5f5; }
+  [data-navbar="primary"] .dropdown-messages .dropdown-item {
+    background: #303f9f;
+    color: #f5f5f5; }
+    [data-navbar="primary"] .dropdown-messages .dropdown-item:hover {
+      background: #303f9f;
+      color: #f5f5f5; }
+
+[data-navbar="secondary"] .dropdown-messages {
+  background: #005180;
+  color: #f5f5f5; }
+  [data-navbar="secondary"] .dropdown-messages .dropdown-title {
+    background: #0078bd;
+    color: #f5f5f5; }
+  [data-navbar="secondary"] .dropdown-messages .dropdown-item {
+    background: #005180;
+    color: #f5f5f5; }
+    [data-navbar="secondary"] .dropdown-messages .dropdown-item:hover {
+      background: #005180;
+      color: #f5f5f5; }
+
+[data-navbar="info"] .dropdown-messages {
+  background: #1976d2;
+  color: #f5f5f5; }
+  [data-navbar="info"] .dropdown-messages .dropdown-title {
+    background: #4095e8;
+    color: #f5f5f5; }
+  [data-navbar="info"] .dropdown-messages .dropdown-item {
+    background: #1976d2;
+    color: #f5f5f5; }
+    [data-navbar="info"] .dropdown-messages .dropdown-item:hover {
+      background: #1976d2;
+      color: #f5f5f5; }
+
+[data-navbar="success"] .dropdown-messages {
+  background: #388e3c;
+  color: #f5f5f5; }
+  [data-navbar="success"] .dropdown-messages .dropdown-title {
+    background: #4bb850;
+    color: #f5f5f5; }
+  [data-navbar="success"] .dropdown-messages .dropdown-item {
+    background: #388e3c;
+    color: #f5f5f5; }
+    [data-navbar="success"] .dropdown-messages .dropdown-item:hover {
+      background: #388e3c;
+      color: #f5f5f5; }
+
+[data-navbar="warning"] .dropdown-messages {
+  background: #ffa000;
+  color: #f5f5f5; }
+  [data-navbar="warning"] .dropdown-messages .dropdown-title {
+    background: #ffb73d;
+    color: #f5f5f5; }
+  [data-navbar="warning"] .dropdown-messages .dropdown-item {
+    background: #ffa000;
+    color: #f5f5f5; }
+    [data-navbar="warning"] .dropdown-messages .dropdown-item:hover {
+      background: #ffa000;
+      color: #f5f5f5; }
+
+[data-navbar="danger"] .dropdown-messages {
+  background: #d32f2f;
+  color: #f5f5f5; }
+  [data-navbar="danger"] .dropdown-messages .dropdown-title {
+    background: #de6262;
+    color: #f5f5f5; }
+  [data-navbar="danger"] .dropdown-messages .dropdown-item {
+    background: #d32f2f;
+    color: #f5f5f5; }
+    [data-navbar="danger"] .dropdown-messages .dropdown-item:hover {
+      background: #d32f2f;
+      color: #f5f5f5; }

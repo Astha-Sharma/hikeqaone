@@ -1,0 +1,371 @@
+[data-background="light"] .nvd3 text,
+[data-background="light"] .nv-label text {
+  fill: #212121;
+  font-family: "Lato", sans-serif;
+  font-size: 12px;
+  font-weight: normal; }
+
+[data-background="light"] .nvd3-pie,
+[data-background="light"] .nvd3-donut {
+  font-family: "Lato", sans-serif;
+  font-size: 12px;
+  font-weight: normal; }
+  [data-background="light"] .nvd3-pie .nvd3.nv-pie path,
+  [data-background="light"] .nvd3-donut .nvd3.nv-pie path {
+    stroke: #ffffff; }
+  [data-background="light"] .nvd3-pie .nvd3.nv-pie path,
+  [data-background="light"] .nvd3-donut .nvd3.nv-pie path {
+    fill-opacity: 1; }
+  [data-background="light"] .nvd3-pie .nv-label text,
+  [data-background="light"] .nvd3-donut .nv-label text {
+    fill: #212121 !important; }
+
+[data-background="light"] .nvd3 .nv-axis path {
+  stroke: #e1e1e1; }
+
+[data-background="light"] .nvd3 .nv-axis line {
+  stroke: #e1e1e1; }
+
+[data-background="light"] .nvd3 .nv-bars .hover rect {
+  fill: #ffffff; }
+
+[data-background="light"] .nvd3 .nv-bars text {
+  fill: #212121; }
+
+[data-background="light"] .nvd3 .nv-bars .hover text {
+  fill: #212121; }
+
+[data-background="light"] .nvd3 .nv-discretebar .nv-groups text,
+[data-background="light"] .nvd3 .nv-multibarHorizontal .nv-groups text {
+  fill: #212121; }
+
+[data-background="light"] .nvd3 line.nv-boxplot-median {
+  stroke: #212121; }
+
+[data-background="light"] .nvd3 .nv-point-paths path {
+  stroke: #e1e1e1;
+  fill: #e1e1e1; }
+
+[data-background="light"] .nvd3 text {
+  font-family: "Lato", sans-serif;
+  font-size: 12px;
+  font-weight: normal; }
+
+[data-background="light"] .nvd3 .title {
+  font-family: "Lato", sans-serif;
+  font-size: 14px;
+  font-weight: normal; }
+
+[data-background="light"] .nvd3 .nv-background {
+  fill: #ffffff; }
+
+[data-background="light"] .nv-brush .resize path {
+  fill: #e1e1e1;
+  stroke: #e1e1e1; }
+
+[data-background="light"] .nvd3 .nv-brushBackground rect {
+  stroke: #ffffff;
+  fill: #212121; }
+
+[data-background="light"] .nvd3 .background path {
+  stroke: #ffffff; }
+
+[data-background="light"] .nvd3 .nv-parallelCoordinates-brush .extent {
+  fill: #212121;
+  stroke: #ffffff; }
+
+[data-background="light"] .nvd3 .missingValuesline line {
+  stroke: #ffffff; }
+
+[data-background="light"] .nvd3.nv-pie .nv-pie-title {
+  fill: #212121; }
+
+[data-background="light"] .nvd3.nv-pie .nv-slice text {
+  stroke: #212121; }
+
+[data-background="light"] .nvd3.nv-pie path {
+  stroke: #ffffff; }
+
+[data-background="light"] .nvd3.nv-sparklineplus .nv-hoverValue line {
+  stroke: #e1e1e1; }
+
+[data-background="light"] .nvd3.nv-sparklineplus .nv-yValue {
+  stroke: #212121; }
+
+[data-background="light"] .nvd3.nv-sparklineplus .nv-maxValue {
+  stroke: #212121;
+  fill: #212121; }
+
+[data-background="light"] .nvd3.nv-sparklineplus .nv-minValue {
+  stroke: #212121;
+  fill: #212121; }
+
+[data-background="light"] .nvtooltip {
+  background: white;
+  color: #212121;
+  border: 1px solid #e1e1e1;
+  font-family: "Lato", sans-serif;
+  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12); }
+
+[data-background="light"] .nvtooltip h3 {
+  background: white;
+  color: #212121;
+  border: 1px solid #e1e1e1; }
+
+[data-background="light"] .nvtooltip table td.legend-color-guide div {
+  border: 1px solid #e1e1e1; }
+
+[data-background="light"] .nvd3 line.nv-guideline {
+  stroke: #e1e1e1; }
+
+[data-background="light"] .nvd3.nv-stackedarea path.nv-area {
+  fill-opacity: 1;
+  stroke-opacity: 0; }
+
+[data-background="dark"] .nvd3 text,
+[data-background="dark"] .nv-label text {
+  fill: #f5f5f5;
+  font-family: "Lato", sans-serif;
+  font-size: 12px;
+  font-weight: normal; }
+
+[data-background="dark"] .nvd3-pie,
+[data-background="dark"] .nvd3-donut {
+  font-family: "Lato", sans-serif;
+  font-size: 12px;
+  font-weight: normal; }
+  [data-background="dark"] .nvd3-pie .nvd3.nv-pie path,
+  [data-background="dark"] .nvd3-donut .nvd3.nv-pie path {
+    stroke: #212121; }
+  [data-background="dark"] .nvd3-pie .nvd3.nv-pie path,
+  [data-background="dark"] .nvd3-donut .nvd3.nv-pie path {
+    fill-opacity: 1; }
+  [data-background="dark"] .nvd3-pie .nv-label text,
+  [data-background="dark"] .nvd3-donut .nv-label text {
+    fill: #f5f5f5 !important; }
+
+[data-background="dark"] .nvd3 .nv-axis path {
+  stroke: #353535; }
+
+[data-background="dark"] .nvd3 .nv-axis line {
+  stroke: #353535; }
+
+[data-background="dark"] .nvd3 .nv-bars .hover rect {
+  fill: #212121; }
+
+[data-background="dark"] .nvd3 .nv-bars text {
+  fill: #f5f5f5; }
+
+[data-background="dark"] .nvd3 .nv-bars .hover text {
+  fill: #f5f5f5; }
+
+[data-background="dark"] .nvd3 .nv-discretebar .nv-groups text,
+[data-background="dark"] .nvd3 .nv-multibarHorizontal .nv-groups text {
+  fill: #f5f5f5; }
+
+[data-background="dark"] .nvd3 line.nv-boxplot-median {
+  stroke: #f5f5f5; }
+
+[data-background="dark"] .nvd3 .nv-point-paths path {
+  stroke: #353535;
+  fill: #353535; }
+
+[data-background="dark"] .nvd3 text {
+  font-family: "Lato", sans-serif;
+  font-size: 12px;
+  font-weight: normal; }
+
+[data-background="dark"] .nvd3 .title {
+  font-family: "Lato", sans-serif;
+  font-size: 14px;
+  font-weight: normal; }
+
+[data-background="dark"] .nvd3 .nv-background {
+  fill: #212121; }
+
+[data-background="dark"] .nv-brush .resize path {
+  fill: #353535;
+  stroke: #353535; }
+
+[data-background="dark"] .nvd3 .nv-brushBackground rect {
+  stroke: #212121;
+  fill: #f5f5f5; }
+
+[data-background="dark"] .nvd3 .background path {
+  stroke: #212121; }
+
+[data-background="dark"] .nvd3 .nv-parallelCoordinates-brush .extent {
+  fill: #f5f5f5;
+  stroke: #212121; }
+
+[data-background="dark"] .nvd3 .missingValuesline line {
+  stroke: #212121; }
+
+[data-background="dark"] .nvd3.nv-pie .nv-pie-title {
+  fill: #f5f5f5; }
+
+[data-background="dark"] .nvd3.nv-pie .nv-slice text {
+  stroke: #f5f5f5; }
+
+[data-background="dark"] .nvd3.nv-pie path {
+  stroke: #212121; }
+
+[data-background="dark"] .nvd3.nv-sparklineplus .nv-hoverValue line {
+  stroke: #353535; }
+
+[data-background="dark"] .nvd3.nv-sparklineplus .nv-yValue {
+  stroke: #f5f5f5; }
+
+[data-background="dark"] .nvd3.nv-sparklineplus .nv-maxValue {
+  stroke: #f5f5f5;
+  fill: #f5f5f5; }
+
+[data-background="dark"] .nvd3.nv-sparklineplus .nv-minValue {
+  stroke: #f5f5f5;
+  fill: #f5f5f5; }
+
+[data-background="dark"] .nvtooltip {
+  background: #3b3b3b;
+  color: #f5f5f5;
+  border: 1px solid #353535;
+  font-family: "Lato", sans-serif;
+  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12); }
+
+[data-background="dark"] .nvtooltip h3 {
+  background: #3b3b3b;
+  color: #f5f5f5;
+  border: 1px solid #353535; }
+
+[data-background="dark"] .nvtooltip table td.legend-color-guide div {
+  border: 1px solid #353535; }
+
+[data-background="dark"] .nvd3 line.nv-guideline {
+  stroke: #353535; }
+
+[data-background="dark"] .nvd3.nv-stackedarea path.nv-area {
+  fill-opacity: 1;
+  stroke-opacity: 0; }
+
+[data-background="primary"] .nvd3 text,
+[data-background="primary"] .nv-label text {
+  fill: #f5f5f5;
+  font-family: "Lato", sans-serif;
+  font-size: 12px;
+  font-weight: normal; }
+
+[data-background="primary"] .nvd3-pie,
+[data-background="primary"] .nvd3-donut {
+  font-family: "Lato", sans-serif;
+  font-size: 12px;
+  font-weight: normal; }
+  [data-background="primary"] .nvd3-pie .nvd3.nv-pie path,
+  [data-background="primary"] .nvd3-donut .nvd3.nv-pie path {
+    stroke: #1a237e; }
+  [data-background="primary"] .nvd3-pie .nvd3.nv-pie path,
+  [data-background="primary"] .nvd3-donut .nvd3.nv-pie path {
+    fill-opacity: 1; }
+  [data-background="primary"] .nvd3-pie .nv-label text,
+  [data-background="primary"] .nvd3-donut .nv-label text {
+    fill: #f5f5f5 !important; }
+
+[data-background="primary"] .nvd3 .nv-axis path {
+  stroke: #212ca0; }
+
+[data-background="primary"] .nvd3 .nv-axis line {
+  stroke: #212ca0; }
+
+[data-background="primary"] .nvd3 .nv-bars .hover rect {
+  fill: #1a237e; }
+
+[data-background="primary"] .nvd3 .nv-bars text {
+  fill: #f5f5f5; }
+
+[data-background="primary"] .nvd3 .nv-bars .hover text {
+  fill: #f5f5f5; }
+
+[data-background="primary"] .nvd3 .nv-discretebar .nv-groups text,
+[data-background="primary"] .nvd3 .nv-multibarHorizontal .nv-groups text {
+  fill: #f5f5f5; }
+
+[data-background="primary"] .nvd3 line.nv-boxplot-median {
+  stroke: #f5f5f5; }
+
+[data-background="primary"] .nvd3 .nv-point-paths path {
+  stroke: #212ca0;
+  fill: #212ca0; }
+
+[data-background="primary"] .nvd3 text {
+  font-family: "Lato", sans-serif;
+  font-size: 12px;
+  font-weight: normal; }
+
+[data-background="primary"] .nvd3 .title {
+  font-family: "Lato", sans-serif;
+  font-size: 14px;
+  font-weight: normal; }
+
+[data-background="primary"] .nvd3 .nv-background {
+  fill: #1a237e; }
+
+[data-background="primary"] .nv-brush .resize path {
+  fill: #212ca0;
+  stroke: #212ca0; }
+
+[data-background="primary"] .nvd3 .nv-brushBackground rect {
+  stroke: #1a237e;
+  fill: #f5f5f5; }
+
+[data-background="primary"] .nvd3 .background path {
+  stroke: #1a237e; }
+
+[data-background="primary"] .nvd3 .nv-parallelCoordinates-brush .extent {
+  fill: #f5f5f5;
+  stroke: #1a237e; }
+
+[data-background="primary"] .nvd3 .missingValuesline line {
+  stroke: #1a237e; }
+
+[data-background="primary"] .nvd3.nv-pie .nv-pie-title {
+  fill: #f5f5f5; }
+
+[data-background="primary"] .nvd3.nv-pie .nv-slice text {
+  stroke: #f5f5f5; }
+
+[data-background="primary"] .nvd3.nv-pie path {
+  stroke: #1a237e; }
+
+[data-background="primary"] .nvd3.nv-sparklineplus .nv-hoverValue line {
+  stroke: #212ca0; }
+
+[data-background="primary"] .nvd3.nv-sparklineplus .nv-yValue {
+  stroke: #f5f5f5; }
+
+[data-background="primary"] .nvd3.nv-sparklineplus .nv-maxValue {
+  stroke: #f5f5f5;
+  fill: #f5f5f5; }
+
+[data-background="primary"] .nvd3.nv-sparklineplus .nv-minValue {
+  stroke: #f5f5f5;
+  fill: #f5f5f5; }
+
+[data-background="primary"] .nvtooltip {
+  background: #232fa8;
+  color: #f5f5f5;
+  border: 1px solid #212ca0;
+  font-family: "Lato", sans-serif;
+  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12); }
+
+[data-background="primary"] .nvtooltip h3 {
+  background: #232fa8;
+  color: #f5f5f5;
+  border: 1px solid #212ca0; }
+
+[data-background="primary"] .nvtooltip table td.legend-color-guide div {
+  border: 1px solid #212ca0; }
+
+[data-background="primary"] .nvd3 line.nv-guideline {
+  stroke: #212ca0; }
+
+[data-background="primary"] .nvd3.nv-stackedarea path.nv-area {
+  fill-opacity: 1;
+  stroke-opacity: 0; }

@@ -1,0 +1,66 @@
+@import "../variables";
+@import "../palettes/navbar";
+
+.dropdown-messages {
+  .btn.btn-default {
+    position: relative;
+    .badge {
+      transform: scale(0.85);
+      border: 0;
+      box-shadow: none !important;
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+}
+
+.dropdown-messages {
+	.dropdown-menu {
+		width: 400px;
+		.dropdown-inner {
+			display: flex;
+			justify-content: flex-start;
+			align-items: center;
+			flex-direction: row;
+			flex-wrap: wrap;
+			.dropdown-item {
+				flex-direction: column;
+				p {
+					margin-bottom: 5px;
+					&:last-child {
+						margin-bottom: 0;
+					}
+				}
+				.badge {
+					margin-right: 10px;
+				}
+				.date {
+					font-size: 0.8rem;
+					font-weight: 600;
+				}
+			}
+		}
+	}
+}
+
+@each $key, $value in $navbar-palettes {
+  [data-navbar="#{$key}"] {
+    .dropdown-messages {
+      background: map-get($value, "background-color");
+      color: map-get($value, "color");
+      .dropdown-title {
+        background: map-get($value, "border-color");
+        color: map-get($value, "color");
+      }
+      .dropdown-item {
+        background: map-get($value, "background-color");
+        color: map-get($value, "color");
+				&:hover {
+					background: map-get($value, "background-color");
+					color: map-get($value, "color");
+				}
+      }
+    }
+  }
+}	

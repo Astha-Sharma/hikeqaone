@@ -1,0 +1,76 @@
+.dashboard-tile {
+    flex-grow: 1;
+    flex-basis: 0%;
+    padding-left: 10px;
+}
+.dashboard-tile:first-child {
+    padding-left: 0px;
+}
+.dashboard-tile .tile-shell {
+    width: 500px;
+    height: 300px;
+    background: lightGrey;
+    border-radius: 10px 10px 10px 10px;
+    overflow: hidden;
+}
+.dashboard-tile .tile-title {
+    background: green;
+    border-radius: 5px 5px 0px 0px;
+    color: white;
+    display: inline-flex;
+    justify-content: center;
+    align-items: baseline;
+    width: 100%;
+}
+.dashboard-tile .tile-body {
+    background: white;
+}
+.dashboard-tile .tile-content {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+.dashboard-tile .tile-content .tile-primary {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: left;
+    padding-top: 3px;
+}
+.dashboard-tile .tile-content .tile-primary .tile-label {
+    font-size: 14px;
+}
+.dashboard-tile .tile-content .tile-primary .tile-value {
+    font-size: 30px;
+    line-height: 28px;
+}
+.dashboard-tile .tile-content .tile-additional {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.dashboard-tile .tile-content .tile-additional .tile-secondary {
+    padding-bottom: 10px;
+}
+.dashboard-tile .tile-content .tile-additional .tile-secondary .tile-label {
+    font-size: 10px;
+    color: #999;
+}
+.dashboard-tile .tile-content .tile-additional .tile-secondary .tile-value {
+    font-size: 12px;
+}
+.dashboard-tile .tile-content:before {
+    clear: both;
+}
+.dashboard-tile .tile-label {
+    text-transform: uppercase;
+    white-space: nowrap;
+    color: #666;
+}
+.dashboard-tile .tile-value {
+    color: #666;
+}

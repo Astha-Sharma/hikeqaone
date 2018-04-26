@@ -1,0 +1,35 @@
+.td-column-pass {
+    color: green;
+    font-weight: bold;
+}
+
+.td-column-fail {
+    color: red;
+    font-weight: bold;
+}
+
+.td-column-skip {
+    color: #fcb460;
+    font-weight: bold;
+}
+
+.td-branch::before{
+    content: "\f126";
+    font-family: FontAwesome;
+    padding-right: 0.5em;
+}
+
+.tr-style {
+    padding: 0.1rem;
+}
+
+.table-header-class{
+    color: white;
+    background-color: #005180;
+    text-align: center;
+}
+
+.td-column-total {
+    color: darkblue;
+    font-weight: bold;
+}

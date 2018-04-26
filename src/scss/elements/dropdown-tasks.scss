@@ -1,0 +1,52 @@
+@import "../variables";
+@import "../palettes/navbar";
+
+.dropdown-tasks {
+	.dropdown-menu {
+		width: 400px;
+		.dropdown-inner {
+			display: flex;
+			justify-content: flex-start;
+			align-items: flex-start;
+			flex-direction: column;
+			flex-wrap: wrap;
+			.dropdown-item {
+				flex-direction: column;
+				p {
+					display: flex;
+					justify-content: space-between;
+					align-items: flex-start;
+					flex-direction: row;
+					flex-wrap: wrap;
+					margin-bottom: 0;
+					.title {
+					}
+					.value {
+						align-self: flex-end;
+						font-weight: 600;
+					}
+				}
+				.progress {
+					margin-top: 10px;
+				}
+			}
+		}
+	}
+}
+@each $key, $value in $navbar-palettes {
+  [data-navbar="#{$key}"] {
+    .dropdown-tasks {
+      .dropdown-item {
+        background: map-get($value, "background-color");
+        color: map-get($value, "color");
+				&:hover {
+					background: map-get($value, "background-color");
+					color: map-get($value, "color");
+				}
+        .progress {
+          background-color: map-get($value, "background-color");
+        }
+      }
+    }
+  }
+}	

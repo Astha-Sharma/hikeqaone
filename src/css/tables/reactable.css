@@ -1,0 +1,5 @@
+.reactable-pagination td a {
+  padding: 0 10px; }
+
+.reactable-header-sortable {
+  outline: none !important; }
