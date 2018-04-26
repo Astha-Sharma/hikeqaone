@@ -58,7 +58,6 @@
     "react-dom": "^15.6.2",
     "react-dygraphs": "0.0.1",
     "react-google-maps": "^7.3.0",
-    "react-iframe": "^1.1.0",
     "react-json-view": "^1.16.1",
     "react-jsx-highcharts": "^2.2.1",
     "react-jsx-highstock": "^2.1.0",
@@ -76,9 +75,9 @@
     "react-select": "^1.2.1",
     "react-select-box": "^3.0.1",
     "react-select-item": "^3.1.0",
-    "react-simpletabs": "^0.7.0",
     "react-spinjs": "^3.0.0",
     "react-spinkit": "^3.0.0",
+    "react-spinners": "^0.3.2",
     "react-table": "^6.7.6",
     "react-toastify": "^3.3.4",
     "react-transition-group": "^1.2.1",
@@ -119,7 +118,7 @@
     "eject": "react-scripts eject",
     "build-css": "node-sass-chokidar --include-path ./src/scss --include-path ./node_modules src/scss -o src/css",
     "watch-css": "npm run build-css && node-sass-chokidar --include-path ./src/scss --include-path ./node_modules src/scss -o src/css --watch --recursive",
-    "start-js": "PORT=5000 react-scripts start",
+    "start-js": "PORT=4000 react-scripts start",
     "start": "npm-run-all -p watch-css start-js",
     "build": "npm run build-css && react-scripts build",
     "server": "nodemon server.js",
@@ -127,5 +126,5 @@
     "prod": "concurrently \"npm run server\" \"serve -s build\"",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
-  "proxy": "http://localhost:9999"
+  "proxy": "http://localhost:9998"
 }

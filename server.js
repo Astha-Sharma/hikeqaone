@@ -25,7 +25,7 @@ var express = require('express'),
 
 
     // STARTING THE SERVER
-    var port = (process.env.NODE_PORT || 9999);
+    var port = (process.env.NODE_PORT || 9998);
     var server = require('http').createServer(app);
     server.timeout = 600000;
     server.on('error', function (err) {
