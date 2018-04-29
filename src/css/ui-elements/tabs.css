@@ -38,7 +38,7 @@
       right: 0;
       width: 100%;
       height: 3px;
-      background-color: #0f8fd8;
+      background-color: #303f9f;
       z-index: 2; }
     [data-background="light"] .nav.nav-tabs:not(.nav-pills):not(.nav-vertical) .nav-link:hover, [data-background="light"] .nav.nav-tabs:not(.nav-pills):not(.nav-vertical) .nav-link.active {
       background: #ffffff;
@@ -57,7 +57,7 @@
   [data-background="light"] .nav.nav-tabs:not(.nav-pills):not(.nav-vertical).nav-tabs-default .nav-link:after {
     background-color: #212121; }
   [data-background="light"] .nav.nav-tabs:not(.nav-pills):not(.nav-vertical).nav-tabs-primary .nav-link:after {
-    background-color: #0f8fd8; }
+    background-color: #303f9f; }
   [data-background="light"] .nav.nav-tabs:not(.nav-pills):not(.nav-vertical).nav-tabs-secondary .nav-link:after {
     background-color: #005180; }
   [data-background="light"] .nav.nav-tabs:not(.nav-pills):not(.nav-vertical).nav-tabs-info .nav-link:after {
@@ -88,9 +88,9 @@
     padding: 10px 20px;
     font-size: 14px; }
     [data-background="light"] .nav.nav-pills .nav-link:hover, [data-background="light"] .nav.nav-pills .nav-link.active {
-      background-color: #0f8fd8;
+      background-color: #303f9f;
       color: #fff;
-      font-weight: bolder; }
+      font-weight: normal; }
     [data-background="light"] .nav.nav-pills .nav-link.disabled {
       cursor: none;
       pointer-events: none;

@@ -1,8 +1,8 @@
 "use strict";
 var request=require('superagent');
 var router = require('express').Router();
-const apiHost = "http://13.228.217.203:6002/getconnect?duration=";
-const responseDistribution = "http://13.228.217.203:6002/timedistribution"
+const apiHost = "http://13.228.217.203:6001/getconnect?duration=";
+const responseDistribution = "http://13.228.217.203:6001/timedistribution"
 const cardData = "http://13.228.217.203:6001/getupdowntime"
 
 

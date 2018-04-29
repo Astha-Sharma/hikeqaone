@@ -60,7 +60,7 @@ class MultipleTimeSeriesChart extends Component{
                     <Tooltip/>
                     <Legend onClick={this.handleMouseEnter.bind(this)}/>
                     {this.props.yAxisDataKey.map(i =>
-                        <Area type={i.type} strokeWidth={1} dataKey={i.data} strokeOpacity={opacity[i.data]} stroke={i.stroke} fill={i.stroke} fillOpacity={0.2} activeDot={{r: 8}} unit=" %"/>
+                        <Area type={i.type} strokeWidth={1} dataKey={i.data} strokeOpacity={opacity[i.data]} stroke={i.stroke} fill={i.stroke} fillOpacity={0.2} activeDot={{r: 8}}/>
                     )}
                 </AreaChart>
             </ResponsiveContainer>
