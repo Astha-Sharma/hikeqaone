@@ -4,10 +4,13 @@ import moment from 'moment'
 import '../../css/ui-elements/tabs.css'
 import Widget from '../../elements/Widget'
 import {TabContent, TabPane, Nav, NavItem, NavLink} from 'reactstrap'
-import { getAndroidTrends, getAndroidTrendsTop, getIosTrends } from "../../actions/crashmonitor";
+import { getAndroidTrends, getAndroidTrendsTop, getIosTrends, getAllAndroidVersion, getAndroidCrashSummaryByVersion} from "../../actions/crashmonitor";
 import MultipleTimeSeriesChart from "../MultipleTimeSeriesChart";
 import crashConstants from "../../constants/crashconstants";
 import MySimpleBarChart from "../MySimpleBarChart";
+import MyReactSelect from "../MyReactSelect";
+import MySimplePieChart from "../MySimplePieChart";
+import MyCrashMonitorTable from '../MyCrashMonitorTable';
 
 class CrashMonitor extends Component
 {
@@ -27,6 +30,11 @@ class CrashMonitor extends Component
             androidTrendWeeklyTop :[],
             iosTrendDaily :[],
             iosTrendWeekly :[],
+            allandroidVersion :[],
+            crashDetails : [],
+            issueTypes : [],
+            areaWiseSplit :[],
+            envValue : "",
             trend_strokeC : [
                 {
                     data: "percentage",
@@ -40,7 +48,8 @@ class CrashMonitor extends Component
                     stroke:  "#0f8fd8",
                     type: 'monotone'
                 }
-            ]
+            ],
+            showing : false
         }
         this.toggle = this.toggle.bind(this)
     }
@@ -51,12 +60,27 @@ class CrashMonitor extends Component
                 activeTab: tab
             })
         }
+         if( tab === 1 ){
+             this.getIosTrends()
+         }
+         if(tab === 0){
+             this.getAndroidTrends()
+             this.getAndroidTrendsTop()
+         }
+         if (tab === 2) {
+             this.getAllAndroidVersion()
+         }
     }
 
     componentDidMount() {
-        this.foo = setInterval(() => this.getAndroidTrends(), 5000);
-        this.foo = setInterval(() => this.getAndroidTrendsTop(), 5000)
-        this.foo = setInterval(() => this.getIosTrends(), 5000)
+        //this.foo = setInterval(() => this.getAndroidTrends(), 50000);
+        //this.foo = setInterval(() => this.getAndroidTrendsTop(), 50000)
+        //this.foo = setInterval(() => this.getIosTrends(), 5000)
+        //this.foo = setInterval(() => this.getAllAndroidVersion(), 50000)
+        this.getIosTrends()
+        this.getAndroidTrends()
+        this.getAndroidTrendsTop()
+        this.getAllAndroidVersion()
     };
 
     getAndroidTrends() {
@@ -98,9 +122,50 @@ class CrashMonitor extends Component
         });
     }
 
+    getAllAndroidVersion() {
+        var { dispatch } = this.props;
+        Promise.all([dispatch(getAllAndroidVersion())]).then((result)=>{
+            if (result[0].type === crashConstants.GET_ANDROIDVERSION_FULFILLED ) {
+                var data = JSON.parse(result[0].data.body.text);
+                this.setState({
+                    allandroidVersion : data.version,
+                    //envValue : data.version[0]
+                })
+            }
+        });
+    }
+
     componentWillUnmount(){
         clearInterval(this.foo)
     }
+
+    onEnvSelect = (e) => {
+        this.state.showing = true
+        if(e.value!=null) {
+            let newEnv = e.value.value;
+            if(newEnv!=null) {
+                this.setState({envValue: e.value.value});
+            }else{
+                var { dispatch } = this.props;
+                Promise.all([dispatch(getAndroidCrashSummaryByVersion(this.state.envValue))]).then((result)=>{
+                    if (result[0].type === crashConstants.GET_ANDROID_CRASH_SUMMARY_BY_VERSION_FULFILLED ){
+                        var res = JSON.parse(result[0].data.body.text);
+                        this.setState({
+                            crashDetails : res.crashDetails,
+                            issueTypes : res.issueTypes,
+                            areaWiseSplit: res.areaWiseSplit
+                        })
+                    }
+                });
+            }
+        }
+    }
+
+    /*
+    componentDidMount(){
+        //getAllAndroidVersion()
+    }
+    */
 
     render() {
         var dailyTrends =  this.state.androidTrendDaily
@@ -111,6 +176,7 @@ class CrashMonitor extends Component
 
         var dailyTrendsIos =  this.state.iosTrendDaily
         var WeeklyTrendsIos =  this.state.iosTrendWeekly
+
         return(
             <div>
                 <div className="row">
@@ -251,7 +317,36 @@ class CrashMonitor extends Component
                                                 </TabPane>
                                             </div>
                                         )
-                                    }}
+                                    }else if(nav.text==="Android Crashes by version" && this.state.activeTab===index) {
+                                        return(
+                                            <TabPane tabId ={`${index}`}>
+                                                <div className="row">
+                                                    <div className="col-12 col-xl-6">
+                                                        <MyReactSelect className="dropdown-default dropdown" label="Select Version" value={this.state.envValue} options={ this.state.allandroidVersion } placeholder="Select Version" onChange={this.onEnvSelect} />
+                                                    </div>
+                                                </div>
+                                                {this.state.showing ?
+                                                        <div className="row">
+                                                            <div className="col-12 col-xl-6">
+                                                                <h6 style={{'text-align': "center"}}>Issue status summary</h6>
+                                                                <MySimplePieChart data={this.state.issueTypes} displayTotalIssue="true"/>
+                                                            </div>
+                                                            <div className="col-12 col-xl-6">
+                                                                <h6 style={{'text-align': "center"}}>Top Crashes-AreaWise Split</h6>
+                                                                <MySimplePieChart data={this.state.areaWiseSplit} displayTotalIssue="false"/>
+                                                            </div>
+                                                        </div> : <div></div>
+                                                }
+                                                <div className="row">
+                                                    <div className="col-12">
+                                                        <h6 style={{'text-align': "center"}}>Top Crashes on this version</h6>
+                                                        <MyCrashMonitorTable data={this.state.crashDetails}/>
+                                                    </div>
+                                                </div>
+                                            </TabPane>
+                                        )
+                                    }
+                                    }
                                 })}
                             </TabContent>
                         </Widget>

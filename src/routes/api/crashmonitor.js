@@ -4,6 +4,8 @@ var router = require('express').Router();
 const trendData = "http://13.228.217.203:6001/crashfreetrendsandroid"
 const topBuilds = "http://13.228.217.203:6001/crashfreetrendsandroidtop"
 const trendDataIos = "http://13.228.217.203:6001/crashfreetrendsios"
+const androidVersions = "http://13.228.217.203:6001/androidbuildsversion"
+const androidCrashByVrsion = "http://13.228.217.203:6001/androidcrashbyversion?version="
 
 
 module.exports = router;
@@ -36,6 +38,23 @@ let getAndroidTrendsTopBuilds = (req,res) => {
     });
 };
 
+
+let getAndroidVersions = (req,res) => {
+    request('GET', androidVersions).end(function (err, result) {
+        if(!err){
+            res.send(result)
+        }
+    });
+};
+
+let getAndroidCrashByVersion = (req,res) => {
+    request('GET', androidCrashByVrsion + req.params.version).end(function (err, result) {
+        if(!err){
+            res.send(result)
+        }
+    });
+};
+
 router.get('/getandroidtrends', (req ,res) => {
     getAndroidTrends(req,res);
 });
@@ -47,3 +66,12 @@ router.get('/getiostrends', (req ,res) => {
 router.get('/getAndroidTrendsTopBuilds', (req ,res) => {
     getAndroidTrendsTopBuilds(req,res);
 });
+
+router.get('/getallandroidversion', (req ,res) => {
+    getAndroidVersions(req,res);
+});
+
+router.get('/androidcrashbyversion/:version', (req ,res) => {
+    getAndroidCrashByVersion(req,res);
+});
+

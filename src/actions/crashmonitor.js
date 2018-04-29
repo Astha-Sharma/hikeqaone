@@ -20,3 +20,17 @@ export const getIosTrends = () => ({
     ],
     payload: (client) => client.get('/api/crashmonitor/getiostrends')
 });
+
+export const getAllAndroidVersion = () => ({
+    types: [
+        crashconstants.GET_ANDROIDVERSION_PENDING, crashconstants.GET_ANDROIDVERSION_FULFILLED, crashconstants.GET_ANDROIDVERSION_REJECT
+    ],
+    payload: (client) => client.get('/api/crashmonitor/getallandroidversion')
+});
+
+export const getAndroidCrashSummaryByVersion = (version) => ({
+    types: [
+        crashconstants.GET_ANDROID_CRASH_SUMMARY_BY_VERSION_PENDING, crashconstants.GET_ANDROID_CRASH_SUMMARY_BY_VERSION_FULFILLED, crashconstants.GET_ANDROID_CRASH_SUMMARY_BY_VERSION_REJECT
+    ],
+    payload: (client) => client.get('/api/crashmonitor/androidcrashbyversion/'+version)
+});
