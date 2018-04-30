@@ -9,7 +9,8 @@ let initTags = Immutable.fromJS({
         trendsTop:[],
         trendsIos:[],
         androidversion:[],
-        androidbyvesion :[]
+        androidbyvesion :[],
+        microappscrashes : []
     }
 })
 
@@ -75,6 +76,18 @@ const Crash = (state = initTags, action) => {
             nextState = state.setIn(["crashStore", "isLoadingTop"], true);
             break;
         case crashconstants.GET_ANDROID_CRASH_SUMMARY_BY_VERSION_REJECT:
+            nextState = state.setIn(["crashStore", "isLoadingTop"], false);
+            break;
+
+        case crashconstants.GET_MICROAPPS_FULFILLED:
+            let microApps = JSON.parse(action.data.body.text);
+            nextState = state.setIn(["crashStore", "isLoading"], false);
+            nextState = nextState.setIn(["crashStore", "microappscrashes"], microApps);
+            break;
+        case crashconstants.GET_MICROAPPS_PENDING:
+            nextState = state.setIn(["crashStore", "isLoadingTop"], true);
+            break;
+        case crashconstants.GET_MICROAPPS_REJECT:
             nextState = state.setIn(["crashStore", "isLoadingTop"], false);
             break;
 

@@ -34,3 +34,10 @@ export const getAndroidCrashSummaryByVersion = (version) => ({
     ],
     payload: (client) => client.get('/api/crashmonitor/androidcrashbyversion/'+version)
 });
+
+export const getMicroAppsCrashDetails = () => ({
+    types: [
+        crashconstants.GET_MICROAPPS_PENDING, crashconstants.GET_MICROAPPS_FULFILLED, crashconstants.GET_MICROAPPS_REJECT
+    ],
+    payload: (client) => client.get('/api/crashmonitor/microappcrashes/')
+});

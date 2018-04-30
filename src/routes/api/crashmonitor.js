@@ -6,6 +6,7 @@ const topBuilds = "http://13.228.217.203:6001/crashfreetrendsandroidtop"
 const trendDataIos = "http://13.228.217.203:6001/crashfreetrendsios"
 const androidVersions = "http://13.228.217.203:6001/androidbuildsversion"
 const androidCrashByVrsion = "http://13.228.217.203:6001/androidcrashbyversion?version="
+const microAppsCrashes = "http://13.228.217.203:6001/microappscrashes"
 
 
 module.exports = router;
@@ -55,6 +56,14 @@ let getAndroidCrashByVersion = (req,res) => {
     });
 };
 
+let getMicroAppsCrashes = (req, res) => {
+    request('GET', microAppsCrashes).end(function (err, result) {
+        if(!err){
+            res.send(result)
+        }
+    });
+}
+
 router.get('/getandroidtrends', (req ,res) => {
     getAndroidTrends(req,res);
 });
@@ -73,5 +82,9 @@ router.get('/getallandroidversion', (req ,res) => {
 
 router.get('/androidcrashbyversion/:version', (req ,res) => {
     getAndroidCrashByVersion(req,res);
+});
+
+router.get('/microappcrashes', (req, res) => {
+    getMicroAppsCrashes(req, res);
 });
 
