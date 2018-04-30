@@ -78,13 +78,25 @@ class MyCrashMonitorTable extends React.Component {
         )
     }
 
+    addBadge = (cell, row) => {
+        if (`${cell}` === 'FATAL') {
+            return (
+                <span className="badge badge-danger badge-sm">{cell}</span>
+            )
+        } else {
+            return (
+                <span className="badge badge-info badge-sm">{cell}</span>
+            )
+        }
+    }
+    
     render() {
         return (
         <BootstrapTable data={ this.props.data } striped hover condensed search>
             <TableHeaderColumn headerAlign='center' width='250' columnTitle={ this.customTitle } dataField='title' isKey>{this.columnNames[0]}</TableHeaderColumn>
             <TableHeaderColumn headerAlign='center' width='350' columnTitle={ true } dataField='subtitle'>{this.columnNames[1]}</TableHeaderColumn>
             <TableHeaderColumn headerAlign='center' width='200' columnTitle={ true } dataField='area'>{this.columnNames[2]}</TableHeaderColumn>
-            <TableHeaderColumn headerAlign='center' dataAlign='center' width='100' dataField='issueType'>{this.columnNames[3]}</TableHeaderColumn>
+            <TableHeaderColumn headerAlign='center' dataAlign='center' width='100' dataField='issueType' dataFormat={ this.addBadge }>{this.columnNames[3]}</TableHeaderColumn>
             <TableHeaderColumn headerAlign='center' dataAlign='center' width='150' dataField='impactLevel' dataSort={ true }>{this.columnNames[4]}</TableHeaderColumn>
             <TableHeaderColumn headerAlign='center' dataAlign='center' width='150' dataField='occurances' dataSort={ true }>{this.columnNames[5]}</TableHeaderColumn>
             <TableHeaderColumn headerAlign='center' dataAlign='center' width='150' dataField='usersAffected' dataSort={ true }>{this.columnNames[6]}</TableHeaderColumn>
