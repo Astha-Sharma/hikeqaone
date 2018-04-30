@@ -4,13 +4,14 @@ import moment from 'moment'
 import '../../css/ui-elements/tabs.css'
 import Widget from '../../elements/Widget'
 import {TabContent, TabPane, Nav, NavItem, NavLink} from 'reactstrap'
-import { getAndroidTrends, getAndroidTrendsTop, getIosTrends, getAllAndroidVersion, getAndroidCrashSummaryByVersion} from "../../actions/crashmonitor";
+import { getAndroidTrends, getAndroidTrendsTop, getIosTrends, getAllAndroidVersion, getAndroidCrashSummaryByVersion, getMicroAppsCrashDetails} from "../../actions/crashmonitor";
 import MultipleTimeSeriesChart from "../MultipleTimeSeriesChart";
 import crashConstants from "../../constants/crashconstants";
 import MySimpleBarChart from "../MySimpleBarChart";
 import MyReactSelect from "../MyReactSelect";
 import MySimplePieChart from "../MySimplePieChart";
 import MyCrashMonitorTable from '../MyCrashMonitorTable';
+import MicroAppsCrashesTable from '../MicroAppsCrashesTable'
 
 class CrashMonitor extends Component
 {
@@ -34,6 +35,8 @@ class CrashMonitor extends Component
             crashDetails : [],
             issueTypes : [],
             areaWiseSplit :[],
+            microAppsCrashes : [],
+            microAppsSplit :[],
             envValue : "",
             trend_strokeC : [
                 {
@@ -60,15 +63,22 @@ class CrashMonitor extends Component
                 activeTab: tab
             })
         }
+
+        if(tab === 0){
+            this.getAndroidTrends()
+            this.getAndroidTrendsTop()
+        }
+
          if( tab === 1 ){
              this.getIosTrends()
          }
-         if(tab === 0){
-             this.getAndroidTrends()
-             this.getAndroidTrendsTop()
-         }
+
          if (tab === 2) {
              this.getAllAndroidVersion()
+         }
+
+         if(tab === 3) {
+             getMicroAppsCrashDetails()
          }
     }
 
@@ -81,6 +91,7 @@ class CrashMonitor extends Component
         this.getAndroidTrends()
         this.getAndroidTrendsTop()
         this.getAllAndroidVersion()
+        this.getMicroAppsCrashDetails()
     };
 
     getAndroidTrends() {
@@ -130,6 +141,20 @@ class CrashMonitor extends Component
                 this.setState({
                     allandroidVersion : data.version,
                     //envValue : data.version[0]
+                })
+            }
+        });
+    }
+
+    getMicroAppsCrashDetails() {
+        var { dispatch } = this.props;
+        Promise.all([dispatch(getMicroAppsCrashDetails())]).then((result)=>{
+            if (result[0].type === crashConstants.GET_MICROAPPS_FULFILLED ) {
+                var data = JSON.parse(result[0].data.body.text);
+                this.setState({
+                    microAppsCrashes : data.crashDetails,
+                    microAppsSplit : data.areaWiseSplit,
+
                 })
             }
         });
@@ -326,21 +351,39 @@ class CrashMonitor extends Component
                                                     </div>
                                                 </div>
                                                 {this.state.showing ?
-                                                        <div className="row">
-                                                            <div className="col-12 col-xl-6">
-                                                                <h6 style={{'text-align': "center"}}>Issue status summary</h6>
-                                                                <MySimplePieChart data={this.state.issueTypes} displayTotalIssue="true"/>
-                                                            </div>
-                                                            <div className="col-12 col-xl-6">
-                                                                <h6 style={{'text-align': "center"}}>Top Crashes-AreaWise Split</h6>
-                                                                <MySimplePieChart data={this.state.areaWiseSplit} displayTotalIssue="false"/>
-                                                            </div>
-                                                        </div> : <div></div>
+                                                    <div className="row">
+                                                        <div className="col-12 col-xl-6">
+                                                            <h6 style={{'text-align': "center"}}>Issue status summary</h6>
+                                                            <MySimplePieChart data={this.state.issueTypes} displayTotalIssue="true" cx={250} cy={150} w={500} h={300}/>
+                                                        </div>
+                                                        <div className="col-12 col-xl-6">
+                                                            <h6 style={{'text-align': "center"}}>Top Crashes-AreaWise Split</h6>
+                                                            <MySimplePieChart data={this.state.areaWiseSplit} displayTotalIssue="false" cx={250} cy={150} w={500} h={300}/>
+                                                        </div>
+                                                    </div> : <div></div>
                                                 }
                                                 <div className="row">
                                                     <div className="col-12">
                                                         <h6 style={{'text-align': "center"}}>Top Crashes on this version</h6>
                                                         <MyCrashMonitorTable data={this.state.crashDetails}/>
+                                                    </div>
+                                                </div>
+                                            </TabPane>
+                                        )
+                                    }else if(nav.text==="MicroApp Crashes" && this.state.activeTab===index) {
+                                        return(
+                                            <TabPane tabId ={`${index}`}>
+                                                <div className="row">
+                                                    <div className="col-12">
+                                                        <h6 style={{'text-align': "center"}}>Top Crashes-Microapp Split</h6>
+                                                        <MySimplePieChart data={this.state.microAppsSplit} displayTotalIssue="false" cx={500} cy={150} w={1000} h={300}/>
+                                                    </div>
+                                                </div>
+
+                                                <div className="row">
+                                                    <div className="col-12">
+                                                        <h6 style={{'text-align': "center"}}>Top Microapp Crashes</h6>
+                                                        <MicroAppsCrashesTable data={this.state.microAppsCrashes}/>
                                                     </div>
                                                 </div>
                                             </TabPane>
