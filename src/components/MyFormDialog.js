@@ -28,11 +28,11 @@ class MyFormDialog extends Component {
             <div onClick={this.handleClick}>{this.props.label} <i className={this.props.icon}></i>
                 {
                     this.state.isShowingModal &&
-                    <ModalContainer onClose={this.handleClose}>
-                        <ModalDialog onClose={this.handleClose}>
+                    <ModalContainer onClose={this.handleClose} >
+                        <ModalDialog onClose={this.handleClose} style={{ 'width' :'700px', 'top' : '100px' }} >
                             <h3>{this.props.label}</h3>
                             <div>
-                                <MyForm title="Test Configuration" {...this.props.formConfig} />
+                                <MyForm title="Create Jira" {...this.props.formConfig} />
                                 {this.props.isCloseModal ?
                                     <div>
                                         {this.handleClose()}
