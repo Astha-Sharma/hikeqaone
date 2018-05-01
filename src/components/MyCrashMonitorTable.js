@@ -1,7 +1,6 @@
 import React from 'react';
-import Table from './DefaultTable'
 import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
-import Tooltip from 'rc-tooltip';
+import MyFormDialog from './MyFormDialog'
 
 var formData = {
     issueId: {
@@ -132,16 +131,23 @@ const area_mapper = {'Chat': 'BCN', 'DevX': 'CD', 'Client Horizontal': 'CH', 'St
     'Checklist': 'BCN'}
 
 
-
 class MyCrashMonitorTable extends React.Component {
-
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
         this.onSearch = this.onSearch.bind(this)
         this.onChangeItemsPerPage = this.onChangeItemsPerPage.bind(this)
         this.state = {
             search: '',
-            itemsPerPage: 10
+            itemsPerPage: 10,
+            formConfig: {
+                data: formData,
+                onChange: this.handleOnChange,
+                onClick: this.submitJira,
+                showLoading: false,
+                flow: "vertical"
+            },
+            isShowingModal: false,
+            closeModal: false,
         }
 
         this.columns = [
@@ -181,6 +187,14 @@ class MyCrashMonitorTable extends React.Component {
         ]
     }
 
+    setFormConfigLoader(bool, formConfigInp){
+        let formConfig = formConfigInp? formConfigInp : this.state.formConfig;
+        formConfig.showLoading = bool;
+        formConfig.data.submit.disabled = bool;
+        formConfig.data.cancel.disabled = bool;
+        this.setState({formConfig: formConfig});
+    }
+
     onSearch(e) {
         e.preventDefault()
         this.setState({
@@ -201,11 +215,37 @@ class MyCrashMonitorTable extends React.Component {
         return `${row.name} for ${cell}`;
     }
 
+    submitJira = (e) => {
+
+    }
+
     colFormatter = (cell, row) => {
-        let url = "https://hikeapp.atlassian.net/browse/" + `${row.jiraId}`
-        return (
-            <a style={{ color: '#0f8fd8' }} target="_blank" href={url}>{cell}</a>
-        )
+        if (`${row.jiraId}`.length == 0 ) {
+            /*
+            formData['summary']['value'] = `${row.title}` + "\n" + `${row.subtitle}`
+            formData.description.value = `${row.stackTrace}`
+            switch ( `${row.impactLevel}` ){
+                case 1 :
+                    formData.priority.value = '1 - Blocker'
+                case 2:
+                    formData.priority.value = '2 - Critical'
+                case 3 :
+                    formData.priority.value = '3 - Major'
+                case 4 :
+                    formData.priority.value = '4 - Normal'
+                case 5 :
+                    formData.priority.value = '5 - Minor'
+            }
+            */
+            return (
+                <span className="badge badge-warning badge-sm"><MyFormDialog isCloseModal={this.state.closeModal} icon="fa fa-edit" label='Create New' formConfig={this.state.formConfig}/></span>
+            )
+        } else {
+            let url = "https://hikeapp.atlassian.net/browse/" + `${row.jiraId}`
+            return (
+                <a style={{color: '#0f8fd8'}} target="_blank" href={url}>{cell}</a>
+            )
+        }
     }
 
     addBadge = (cell, row) => {
@@ -219,26 +259,28 @@ class MyCrashMonitorTable extends React.Component {
             )
         }
     }
-    
+
     render() {
         return (
-        <BootstrapTable data={ this.props.data } striped hover condensed search>
-            <TableHeaderColumn headerAlign='center' width='250' columnTitle={ this.customTitle } dataField='title' isKey>{this.columnNames[0]}</TableHeaderColumn>
-            <TableHeaderColumn headerAlign='center' width='350' columnTitle={ true } dataField='subtitle'>{this.columnNames[1]}</TableHeaderColumn>
-            <TableHeaderColumn headerAlign='center' width='200' columnTitle={ true } dataField='area'>{this.columnNames[2]}</TableHeaderColumn>
-            <TableHeaderColumn headerAlign='center' dataAlign='center' width='100' dataField='issueType' dataFormat={ this.addBadge }>{this.columnNames[3]}</TableHeaderColumn>
-            <TableHeaderColumn headerAlign='center' dataAlign='center' width='150' dataField='impactLevel' dataSort={ true }>{this.columnNames[4]}</TableHeaderColumn>
-            <TableHeaderColumn headerAlign='center' dataAlign='center' width='150' dataField='occurances' dataSort={ true }>{this.columnNames[5]}</TableHeaderColumn>
-            <TableHeaderColumn headerAlign='center' dataAlign='center' width='150' dataField='usersAffected' dataSort={ true }>{this.columnNames[6]}</TableHeaderColumn>
-            <TableHeaderColumn headerAlign='center' dataAlign='center' width='150' dataField='infocusRatio' dataSort={ true }>{this.columnNames[7]}</TableHeaderColumn>
-            <TableHeaderColumn headerAlign='center' dataAlign='center' width='100' dataField='jiraId' dataFormat={ this.colFormatter }>{this.columnNames[8]}</TableHeaderColumn>
-            <TableHeaderColumn headerAlign='center' dataAlign='center' width='100' dataField='status'>{this.columnNames[9]}</TableHeaderColumn>
-            <TableHeaderColumn headerAlign='center' dataAlign='center' width='200' columnTitle={ true } dataField='fixVersion'>{this.columnNames[10]}</TableHeaderColumn>
-            <TableHeaderColumn headerAlign='center' dataAlign='center' width='150' dataField='assignee'>{this.columnNames[11]}</TableHeaderColumn>
-            <TableHeaderColumn headerAlign='center' width='350' columnTitle={ this.customTitle } dataField='stackTrace'>{this.columnNames[12]}</TableHeaderColumn>
-            <TableHeaderColumn headerAlign='center' dataAlign='center' width='250' columnTitle={ true } dataField='firstBuild'>{this.columnNames[13]}</TableHeaderColumn>
-            <TableHeaderColumn headerAlign='center' dataAlign='center' width='250' columnTitle={ true } dataField='lastBuild'>{this.columnNames[14]}</TableHeaderColumn>
-        </BootstrapTable>
+            <div>
+                <BootstrapTable data={ this.props.data } striped hover condensed search>
+                    <TableHeaderColumn headerAlign='center' width='250' columnTitle={ this.customTitle } dataField='title' isKey>{this.columnNames[0]}</TableHeaderColumn>
+                    <TableHeaderColumn headerAlign='center' width='350' columnTitle={ true } dataField='subtitle'>{this.columnNames[1]}</TableHeaderColumn>
+                    <TableHeaderColumn headerAlign='center' width='200' columnTitle={ true } dataField='area'>{this.columnNames[2]}</TableHeaderColumn>
+                    <TableHeaderColumn headerAlign='center' dataAlign='center' width='100' dataField='issueType' dataFormat={ this.addBadge }>{this.columnNames[3]}</TableHeaderColumn>
+                    <TableHeaderColumn headerAlign='center' dataAlign='center' width='150' dataField='impactLevel' dataSort={ true }>{this.columnNames[4]}</TableHeaderColumn>
+                    <TableHeaderColumn headerAlign='center' dataAlign='center' width='150' dataField='occurances' dataSort={ true }>{this.columnNames[5]}</TableHeaderColumn>
+                    <TableHeaderColumn headerAlign='center' dataAlign='center' width='150' dataField='usersAffected' dataSort={ true }>{this.columnNames[6]}</TableHeaderColumn>
+                    <TableHeaderColumn headerAlign='center' dataAlign='center' width='150' dataField='infocusRatio' dataSort={ true }>{this.columnNames[7]}</TableHeaderColumn>
+                    <TableHeaderColumn headerAlign='center' dataAlign='center' width='200' dataField='jiraId' dataFormat={ this.colFormatter }>{this.columnNames[8]}</TableHeaderColumn>
+                    <TableHeaderColumn headerAlign='center' dataAlign='center' width='100' dataField='status'>{this.columnNames[9]}</TableHeaderColumn>
+                    <TableHeaderColumn headerAlign='center' dataAlign='center' width='200' columnTitle={ true } dataField='fixVersion'>{this.columnNames[10]}</TableHeaderColumn>
+                    <TableHeaderColumn headerAlign='center' dataAlign='center' width='150' dataField='assignee'>{this.columnNames[11]}</TableHeaderColumn>
+                    <TableHeaderColumn headerAlign='center' width='350' columnTitle={ this.customTitle } dataField='stackTrace'>{this.columnNames[12]}</TableHeaderColumn>
+                    <TableHeaderColumn headerAlign='center' dataAlign='center' width='250' columnTitle={ true } dataField='firstBuild'>{this.columnNames[13]}</TableHeaderColumn>
+                    <TableHeaderColumn headerAlign='center' dataAlign='center' width='250' columnTitle={ true } dataField='lastBuild'>{this.columnNames[14]}</TableHeaderColumn>
+                </BootstrapTable>
+            </div>
         )
     }
 }
