@@ -250,7 +250,7 @@ class ExecuteSuite extends Component{
                 "iteration"  :  parseInt(this.state.formConfigExec.data.iteration.value),
                 "suiteName"  : suiteResponse.suiteName,
                 "dataFiles"  : suiteResponse.dataFiles,
-                "createdBy"  : "abhijit.p@swiggy.in"
+                "createdBy"  : "abc@gmail.com"
             }
 
             Promise.all([getHardwareAvailability(payload, dispatch)]).then((result)=>{

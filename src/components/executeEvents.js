@@ -37,7 +37,7 @@ class FetchAPIData extends React.Component
 
   componentDidMount()
   {
-    var URL="http://qa-u-developement-01.swiggyops.de:7500/api/v1/events/list";
+    var URL="http://<url>/api/v1/events/list";
     console.log("MyURLForResult :",URL);
     axios.get(URL).then((response)=>{
       console.log("URL"+URL);
@@ -102,7 +102,7 @@ if(dateString2<dateString1)
  {
 //put valiidation
  }
- var url="http://qa-u-developement-01.swiggyops.de:7500/api/v1/events/runquery?startDate="+sDate+"&endDate="+eDate+"&eventList="+this.state.eventNames;
+ var url="http://<url>/api/v1/events/runquery?startDate="+sDate+"&endDate="+eDate+"&eventList="+this.state.eventNames;
    axios.get(url).then((response)=>{
      console.log("JobIs:"+response.data.job_id);
         if(response.data.job_id){

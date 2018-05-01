@@ -13,7 +13,7 @@ const urls = [
                 title: 'Rhaegal',
                 items:
                     [
-                        {url: '//qa-gotinflux.swiggyops.de:3000/dashboard/db/enginehealth?orgId=1', icon: 'fa fa-stethoscope',title: 'Engines Health',items: []},
+                        {url: '//<url>/dashboard/db/enginehealth?orgId=1', icon: 'fa fa-stethoscope',title: 'Engines Health',items: []},
                         {url: '/rhaegal/addSuite', icon: 'fa fa-plus',title: 'Create Your Test',items: []},
                         {url: '/rhaegal/execute', icon: 'fa fa-play',title: 'Execute Suite',items: []},
                         {url: '/rhaegal/history', icon: 'fa fa-pie-chart',title: 'Result History',items: []}
@@ -41,7 +41,7 @@ const urls = [
                         {url: '/drogon/running/summary', icon: 'fa fa-area-chart',title: 'Running Summary',items: []}]
             },
             {
-                url: '//viserion.swiggyops.de',
+                url: '//<url>',
                 icon: 'fa fa-superpowers',
                 title: 'Viserion',
                 badge: {
@@ -51,7 +51,7 @@ const urls = [
                 items: []
             },
             {
-                url: '//qaicinga.swiggyops.de/icingaweb2/',
+                url: '//<url>/icingaweb2/',
                 icon: 'fa fa-ravelry',
                 title: 'EastWatch',
                 badge: {
@@ -61,7 +61,7 @@ const urls = [
                 items: []
             },
             {
-                url: '//thewall.swiggyops.de',
+                url: '//<url>',
                 icon: 'fa fa-shield',
                 title: 'The Wall',
                 badge: {

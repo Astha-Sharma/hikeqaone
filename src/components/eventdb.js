@@ -14,7 +14,7 @@ class EventsDB extends React.Component
 
   componentDidMount()
   {
-    var url="http://qa-u-developement-01.swiggyops.de:7500/api/v1/events/metainfo";
+    var url="http://<url>/api/v1/events/metainfo";
     axios.get(url).then((response)=>{
       console.log("URL"+url);
         this.setState({

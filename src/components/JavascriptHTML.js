@@ -20,7 +20,7 @@ class FetchAPIData extends React.Component
 
   componentDidMount1()
 {
-  fetch('http://qa-u-developement-01.swiggyint.in:7500/api/v1/events/list').
+  fetch('http://<url>/api/v1/events/list').
   then((respData)=>respData.json()).
   then((jsonReponse)=>
   {

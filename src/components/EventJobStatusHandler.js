@@ -23,7 +23,7 @@ class EventJobStatusHandler extends React.Component
   getJobStatus(timeinterval)
   {
     setTimeout(function(){
-      const url="http://qa-u-developement-01.swiggyops.de:7500/api/v1/events/jobstatus?job_id="+this.props.jobrunId;
+      const url="http://<url>/api/v1/events/jobstatus?job_id="+this.props.jobrunId;
           console.log(url);
           axios.get(url).then((response)=>{
             console.log("response.data.status for url :api/v1/events/jobstatus?job_id :",response.data.status);

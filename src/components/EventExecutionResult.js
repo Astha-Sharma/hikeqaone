@@ -16,7 +16,7 @@ class FetchEventResult extends React.Component
   {
     console.log("Event Fetch Result :componentWillReceiveProps>>"+nextProps.jobrunId);
     console.log("this.props.jobrunId:componentWillReceiveProps>>",this.props.jobrunId);
-    var URL="http://qa-u-developement-01.swiggyops.de:7500/api/v1/events/results?job_id="+this.props.jobrunId;
+    var URL="http://<url>/api/v1/events/results?job_id="+this.props.jobrunId;
     console.log("MyURLForResult :",URL);
     axios.get(URL).then((response)=>{
       console.log("URL"+URL);
