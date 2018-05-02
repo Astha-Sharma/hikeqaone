@@ -41,3 +41,10 @@ export const getMicroAppsCrashDetails = () => ({
     ],
     payload: (client) => client.get('/api/crashmonitor/microappcrashes/')
 });
+
+export const createJira = (payload) => ({
+    types: [
+        crashconstants.GET_CREATEJIRA_PENDING, crashconstants.GET_CREATEJIRA_FULFILLED, crashconstants.GET_CREATEJIRA_REJECT
+    ],
+    payload: (client) => client.post('/api/crashmonitor/createjira', payload)
+});

@@ -64,6 +64,23 @@ let getMicroAppsCrashes = (req, res) => {
     });
 }
 
+let postJira = (req, res) => {
+    console.log("Here")
+    request.post('https://hikeapp.atlassian.net/rest/api/2/issue/').
+    send(JSON.stringify(req.body)).
+    set('Accept', 'application/json').
+    set('Authorization' , 'basic Y3Jhc2hyZXBvcnRlckBoaWtlLmluOmtpbGxiaWxsQDIwMTg=').
+    set('Access-Control-Allow-Origin', '*').
+    end(function (err, result) {
+        if(err){
+            console.log(err, "---------<<")
+        }
+        if (!err) {
+            res.send(result);
+        }
+    });
+}
+
 router.get('/getandroidtrends', (req ,res) => {
     getAndroidTrends(req,res);
 });
@@ -87,4 +104,9 @@ router.get('/androidcrashbyversion/:version', (req ,res) => {
 router.get('/microappcrashes', (req, res) => {
     getMicroAppsCrashes(req, res);
 });
+
+router.post('/createjira', (req, res) => {
+    postJira(req, res);
+});
+
 

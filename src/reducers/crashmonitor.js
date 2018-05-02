@@ -91,6 +91,18 @@ const Crash = (state = initTags, action) => {
             nextState = state.setIn(["crashStore", "isLoadingTop"], false);
             break;
 
+        case crashconstants.GET_CREATEJIRA_FULFILLED:
+            let createjira = JSON.parse(action.data.body.text);
+            nextState = state.setIn(["crashStore", "isLoading"], false);
+            nextState = nextState.setIn(["crashStore", "createjira"], createjira);
+            break;
+        case crashconstants.GET_CREATEJIRA_PENDING:
+            nextState = state.setIn(["crashStore", "isLoadingTop"], true);
+            break;
+        case crashconstants.GET_CREATEJIRA_REJECT:
+            nextState = state.setIn(["crashStore", "isLoadingTop"], false);
+            break;
+
         default:
             return state;
     }
