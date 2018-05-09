@@ -4,6 +4,7 @@ import MyFormDialog from './MyFormDialog'
 import { createJira } from "../actions/crashmonitor";
 import { ToastContainer, toast } from 'react-toastify';
 import {connect} from "react-redux";
+import { RingLoader } from 'react-spinners';
 
 const assignee_mapper = {
     'BCN': 'radhakrishna',
